@@ -20,7 +20,6 @@
 .mainContent{
     height: 100%;
     width: 100%;
-    background-color: darkgray;
     flex-grow: 1;
 }
 
@@ -40,6 +39,29 @@
     font-size: 10px;
     padding: 9px 28px;
 }
+
+.mainContentContainer{
+    padding: 0 18px;
+}
+
+.navigation{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.navigationLink{
+    text-decoration: none;
+    color: #878787;
+    font-size: 10px;
+    padding: 15px 8px;
+}
+
+
+
+
+
 
 .containerBottom{
     height: 60px;
