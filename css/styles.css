@@ -6,7 +6,7 @@
 }
 
 .containerTop{
-    height: calc(100vh - 60px);
+    height: calc(100vh - 80px);
     background-color: #141922;
     display: flex;
 }
@@ -18,7 +18,6 @@
     flex-shrink: 0;
 }
 .mainContent{
-    height: 100%;
     width: 100%;
     flex-grow: 1;
 }
@@ -41,14 +40,16 @@
 }
 
 .mainContentContainer{
+    height: calc(100% - 73px);
     padding: 0 18px;
+    overflow: auto;
 }
 
 .navigation{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
+    padding-bottom: 10px;
 }
 
 .navigationLink{
@@ -58,12 +59,54 @@
     padding: 15px 8px;
 }
 
+.sectionTitle{
+    color: white;
+    font-size: 18px;
+}
 
+.sectionSubtitle{
+    color: #878787;
+    font-size: 9px;
+}
+
+.containerCards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.card{
+    width: calc(100% / 2 - 5px);
+    padding: 4px;
+}
+
+.cardImg__img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.cardImg__img--artisti{
+    border-radius: 50%;
+}
+
+.cardText__title{
+    font-size: 10px;
+    color: white;
+    text-align: center;
+    padding: 8px 0;
+}
+
+.cardText__subtitle{
+    color: #878787;
+    font-size: 7px;
+    text-align: center;
+}
 
 
 
 
 .containerBottom{
-    height: 60px;
+    height: 80px;
     background-color: #282828;
 }
