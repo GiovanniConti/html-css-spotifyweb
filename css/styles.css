@@ -6,7 +6,7 @@
 }
 
 .containerTop{
-    height: calc(100vh - 80px);
+    height: calc(100vh - 70px);
     background-color: #141922;
     display: flex;
 }
@@ -53,13 +53,6 @@
     border-radius: 50%;
 }
 
-
-
-
-
-
-
-
 .mainContent{
     width: 100%;
     flex-grow: 1;
@@ -78,12 +71,12 @@
     background-color: transparent;
     border: 1px solid white;
     border-radius: 15px;
-    font-size: 10px;
+    font-size: 14px;
     padding: 9px 28px;
 }
 
 .mainContentContainer{
-    height: calc(100% - 73px);
+    height: calc(100% - 78px);
     padding: 0 18px;
     overflow: auto;
 }
@@ -98,19 +91,33 @@
 .navigationLink{
     text-decoration: none;
     color: #878787;
-    font-size: 10px;
+    font-size: 12px;
     padding: 15px 6px;
     font-weight: 600;
 }
 
+.highlighted{
+    position: relative;
+}
+
+.highlighted::after{
+    content: "";
+    width: 30px;
+    height: 3px;
+    background: yellowgreen;
+    position: absolute;
+    top: 32px;
+    left: 31px;
+}
+
 .sectionTitle{
     color: white;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .sectionSubtitle{
     color: #878787;
-    font-size: 9px;
+    font-size: 11px;
 }
 
 .containerCards{
@@ -121,8 +128,8 @@
 }
 
 .card{
-    width: calc(100% / 2 - 5px);
-    padding: 4px;
+    width: calc(100% / 2);
+    padding: 5px;
 }
 
 .cardImg__img{
@@ -135,7 +142,7 @@
 }
 
 .cardText__title{
-    font-size: 10px;
+    font-size: 13px;
     color: white;
     text-align: center;
     padding: 8px 0;
@@ -143,14 +150,110 @@
 
 .cardText__subtitle{
     color: #878787;
-    font-size: 7px;
+    font-size: 9px;
     text-align: center;
+}
+
+.containerBottom{
+    height: 70px;
+    background-color: #282828;
+}
+
+.containerPlayingNow{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.playingNow,
+.extraControls{
+    width: 30%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    padding: 4px;
+}
+
+.playingNow__containerImg__img{
+    max-width: 40px;
+    padding: 0 8px;
+}
+
+.playingNow__titles{
+    padding: 0 5px;
+}
+
+.playingNow__titles__singer{
+    color: white;
+    font-size: 10px;
+}
+
+.playingNow__titles__song{
+    color: #878787;
+    font-size: 8px;
+}
+
+.playingNow__icons{
+    color: #878787;
+    font-size: 13px;
+    padding: 15px;
+}
+
+.playerControls{
+    width: 40%;
+    min-height: 20px;
+    text-align: center;
+}
+
+.playerControls__buttons__icons{
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.playerControls__buttons__icons--play{
+    font-size: 29px;
+    padding: 3px 15px;
+}
+
+.playerControls__playbackBar{
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.playerControls__playbackBar__progressTime,
+.playerControls__playbackBar__playbackDuration{
+    font-size: 10px;
+    color: white;
+    flex-shrink: 0;
+    padding: 0 4px;
+}
+
+.extraControls__icon{
+    color: white;
+    padding: 4px;
 }
 
 
 
+/* Utilities */
 
-.containerBottom{
-    height: 80px;
-    background-color: #282828;
+.progressiveBarStyle{
+    height: 4px;
+    flex-grow: 1;
+    background: #878787;
+    border-radius: 15px;
+    position: relative;
+}
+
+.progressiveBarStyle::after{
+    content: "";
+    width: 15%;
+    height: 4px;
+    background: white;
+    position: absolute;
+    border-radius: 15px;
+    left: 0px;
 }

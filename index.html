@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spotify</title>
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -44,8 +45,8 @@
             
             <div class="mainContentContainer">
 
-                <div class="navigation">
-                    <a href="#" class="navigationLink">IN EVIDENZA</a>
+                <div class="navigation ">
+                    <a href="#" class="navigationLink highlighted">IN EVIDENZA</a>
                     <a href="#" class="navigationLink">PODCAST</a>
                     <a href="#" class="navigationLink">CLASSIFICHE</a>
                     <a href="#" class="navigationLink">GENERI E MOOD</a>
@@ -180,7 +181,50 @@
         </div>
 
     </div>
-    <div class="containerBottom"></div>
+    <div class="containerBottom">
+
+        <div class="containerPlayingNow">
+
+            <div class="playingNow">
+                <div class="playingNow__containerImg">
+                    <img class="playingNow__containerImg__img" src="img/sinister.jpeg" alt="Sinister">
+                </div>
+                <div class="playingNow__titles">
+                    <h5 class="playingNow__titles__singer">Sinister</h5>
+                    <h6 class="playingNow__titles__song">Brano Nome</h6>
+                </div>
+                <div class="playingNow__icons">
+                    <span><i class="far fa-heart"></i></span>
+                    <span><i class="far fa-folder"></i></span>
+                </div>
+            </div>
+
+            <div class="playerControls">
+                <div class="playerControls__buttons">
+                    <span class="playerControls__buttons__icons"><i class="fas fa-random"></i></span>
+                    <span class="playerControls__buttons__icons"><i class="fas fa-step-backward"></i></span>
+                    <span class="playerControls__buttons__icons playerControls__buttons__icons--play"><i class="far fa-play-circle"></i></span>
+                    <span class="playerControls__buttons__icons"><i class="fas fa-step-forward"></i></span>
+                    <span class="playerControls__buttons__icons"><i class="fas fa-redo"></i></span>
+                </div>
+
+                <div class="playerControls__playbackBar containerRelative">
+                    <span class="playerControls__playbackBar__progressTime">0:25</span>
+                    <div class="playerControls__playbackBar__progressBar progressiveBarStyle"></div>
+                    <span class="playerControls__playbackBar__playbackDuration">4:35</span>
+                </div>
+            </div>
+
+            <div class="extraControls containerRelative">
+                <a class="extraControls__icon"><i class="fas fa-list"></i></a>
+                <a class="extraControls__icon"><i class="fab fa-chromecast"></i></a>
+                <a class="extraControls__icon"><i class="fas fa-volume-up"></i></a>
+                <div class="extraControls__volumeBar progressiveBarStyle"></div>
+            </div>
+
+        </div>
+
+    </div>
 
 </body>
 </html>
