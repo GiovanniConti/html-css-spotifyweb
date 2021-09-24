@@ -9,7 +9,7 @@
     height: calc(100vh - 70px);
     background-color: #141922;
     display: flex;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .sidebar{
@@ -32,6 +32,11 @@
 
 .logoSmall{
     filter: brightness(2);
+    padding-bottom: 7px;
+}
+
+.sidebar__top__navListHighlighted__link{
+    filter: brightness(1);
 }
 
 .sidebar__middle{
@@ -62,7 +67,7 @@
     background-color: #080B11;
     display: flex;
     justify-content: flex-end;
-    padding: 25px 5px;
+    padding: 25px 11px;
 }
 
 .mainContentBtn__btn{
@@ -70,9 +75,13 @@
     font-weight: bold;
     background-color: transparent;
     border: 1px solid white;
-    border-radius: 15px;
+    border-radius: 20px;
     font-size: 14px;
     padding: 9px 28px;
+}
+
+.mainContentBtn__btn:hover{
+    transform: scale(1.1,1.1);
 }
 
 .mainContentContainer{
@@ -110,9 +119,6 @@
     top: 70%;
     left: 30%;
 }
-.sidebar__top__navListHighlighted__link{
-    filter: brightness(1);
-}
 
 .sectionTitle{
     color: white;
@@ -135,8 +141,35 @@
     padding: 5px;
 }
 
+.card:hover{
+    content: "";
+    background-color: black;
+    opacity: 0.5;
+    z-index: 2;
+}
+
+.cardOverlay{
+    display: none;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    z-index: 99;
+}
+
+.card:hover .cardOverlay{
+    display: inline-block;
+}
+
+.cardImg{
+    position: relative;
+}
+
 .cardImg__img{
     width: 100%;
+    max-width: 230px;
     object-fit: contain;
 }
 
@@ -198,8 +231,10 @@
 
 .playingNow__icons{
     color: #878787;
-    font-size: 13px;
-    padding: 15px;
+    font-size: 14px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 .playerControls{
@@ -220,24 +255,41 @@
     padding: 3px 15px;
 }
 
+.playerControls__buttons__icons--play:hover{
+    font-size: 31px;
+}
+
 .playerControls__playbackBar{
     display: flex;
+    justify-content: center;
     align-items: center;
     padding: 5px 0;
 }
 
+.playerControls__playbackBar__progressBar{
+    max-width: 500px;
+}
+
 .playerControls__playbackBar__progressTime,
 .playerControls__playbackBar__playbackDuration{
-    font-size: 10px;
+    font-size: 11px;
     color: white;
     flex-shrink: 0;
     padding: 0 4px;
+}
+
+.extraControls{
+    justify-content: flex-end;
 }
 
 .extraControls__icon{
     color: white;
     padding: 4px;
     filter: brightness(2);
+}
+
+.extraControls__volumeBar{
+    max-width: 150px;
 }
 
 
@@ -253,6 +305,9 @@
 }
 
 @media screen and (min-width: 568px) {
+
+    /* SIDEBAR TOP*/
+
     .sidebar{
         width: 250px;
         padding: 0 17px;
@@ -260,6 +315,12 @@
     
     .logoSmall{
         display: none;
+    }
+
+    .logoLarge{
+        width: 150px;
+        padding: 13px 0;
+        filter: brightness(2);
     }
 
     .sidebar__top__navList__item{
@@ -290,21 +351,15 @@
         padding: 0 5px;
     }
 
-    .logoLarge{
-        width: 150px;
-        padding: 13px 0;
-        filter: brightness(2);
-    }
+    /* SIDEBAR MIDDLE */
 
     .playlist{
         color: white;
         font-size: 14px;
         padding: 8px 0;
-        flex-shrink: 0;
     }
 
     .playlist__add{
-        flex-shrink: 0;
         font-size: 14px;
         font-weight: 700;
     }
@@ -316,26 +371,13 @@
         padding-right: 5px;
     }
 
-    .playlist__list{
-        flex-grow: 1;
-        overflow: auto;
-    }
-
     .playlist__list__item{
         font-weight: 600;
         font-size: 13px;
         padding: 8px 0;
     }
 
-
-    .navigation{
-        padding-bottom: 20px;
-    }
-
-    .navigationLink{
-        font-size: 15px;
-        padding: 17px 10px;
-    }
+    /* SIDEBAR BOTTOM */
 
     .sidebar__bottom__list__item--download{
         border-bottom: 1px solid #878787;
@@ -360,10 +402,73 @@
         color: white;
         font-weight: 600;
     }
+
+    /* MAIN CONTENT */
+
+    .navigation{
+        padding-bottom: 20px;
+    }
+
+    .navigationLink{
+        font-size: 15px;
+        padding: 17px 10px;
+    }
 }
 
+@media screen and (min-width: 834px){
+    .card{
+        width: calc(100% / 4);
+        padding: 5px;
+    }
 
+    .playingNow__icons{
+        flex-direction: row;
+    }
 
+    .playingNow__icons a{
+        padding: 10px;
+    }
+
+    .extraControls{
+        padding: 0 12px;
+    }
+
+    .extraControls__icon{
+        font-size: 20px;
+        padding: 10px;
+    }    
+}
+
+@media screen and (min-width: 1100px){
+    .card{
+        width: calc(100% / 6);
+        padding: 5px;
+    }
+    .cardImg__img{
+        width: 100%;
+        object-fit: contain;
+    }
+
+    /* Playing Now (container Bottom) */
+
+    .playingNow__containerImg__img {
+        max-width: 65px;
+        padding: 0 10px;
+    }
+
+    .playingNow__titles__singer{
+        font-size: 15px;
+    }
+
+    .playingNow__titles__song{
+        font-size: 12px;
+    }
+
+    .playingNow__icons{
+        font-size: 15px;
+        padding: 0 20px
+    }
+}
 
 /* Utilities */
 
@@ -382,19 +487,39 @@ a:hover{
 }
 
 .progressiveBarStyle{
-    height: 4px;
+    height: 5px;
     flex-grow: 1;
     background: #878787;
     border-radius: 15px;
     position: relative;
 }
 
-.progressiveBarStyle::after{
+.progressiveBarStyle:after{
     content: "";
     width: 15%;
-    height: 4px;
+    height: 5px;
     background: white;
     position: absolute;
     border-radius: 15px;
     left: 0px;
+}
+
+.progressiveBarStyle:hover:after{
+    background: yellowgreen;
+}
+
+.progressiveBarStyleCircle{
+    display: none;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    left: 13%;
+    top: -3px;
+    z-index: 1;
+}
+
+.progressiveBarStyle:hover .progressiveBarStyleCircle{
+    display: inline-block;
 }
