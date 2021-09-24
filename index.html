@@ -19,19 +19,37 @@
             <div class="sidebar__top">
                 
                 <ul class="sidebar__top__navList">
-                    <li class="sidebar__top__navList__item"><a href="#"><img src="img/logo-small.svg" alt="Logo small"></a></li>
-                    <li class="sidebar__top__navList__item"><a href="#"><img src="img/home.svg" alt="Home"></a></li>
-                    <li class="sidebar__top__navList__item"><a href="#"><img src="img/search.svg" alt="Search"></a></li>
-                    <li class="sidebar__top__navList__item"><a href="#"><img src="img/libreria.svg" alt="Libreria"></a></li>
+                    <li class="sidebar__top__navList__item logoLarge"><a href="#"><img  src="img/logo.svg" alt="Logo"></a></li>
+                    <li class="sidebar__top__navList__item logoSmall"><a href="#"><img src="img/logo-small.svg" alt="Logo small"></a></li>
+                    <li class="sidebar__top__navList__item sidebar__top__navListHighlighted"><a class="sidebar__top__navListHighlighted__link" href="#"><img class="sidebar__top__navList__item__img" src="img/home.svg" alt="Home"> <span class="sidebar__top__navList__item__text hiddenOnMobile">Home</span></a></li>
+                    <li class="sidebar__top__navList__item"><a href="#"><img class="sidebar__top__navList__item__img" src="img/search.svg" alt="Search"> <span class="sidebar__top__navList__item__text hiddenOnMobile">Cerca</span></a></li>
+                    <li class="sidebar__top__navList__item"><a href="#"><img class="sidebar__top__navList__item__img" src="img/libreria.svg" alt="Libreria"><span class="sidebar__top__navList__item__text hiddenOnMobile">La tua libreria</span></a></li>
                 </ul>
             </div>
 
-            <div class="sidebar__middle"></div>
+            <div class="sidebar__middle">
+                <div class="hiddenOnMobile">
+
+                    <h3 class="playlist">PLAYLIST</h3>
+                    <a href="#" class="playlist__add"><span class="playlist__plusSign"><i class="fas fa-plus-square"></i></span> Crea Playlist</a>
+                    <ul class="playlist__list">
+                        <li class="playlist__list__item"><a href="#">Nome Playlist</a></li>
+                        <li class="playlist__list__item"><a href="#">Nome Playlist</a></li>
+                        <li class="playlist__list__item"><a href="#">Nome Playlist</a></li>
+                        <li class="playlist__list__item"><a href="#">Nome Playlist</a></li>
+                        <li class="playlist__list__item"><a href="#">Nome Playlist</a></li>
+                        <li class="playlist__list__item"><a href="#">Nome Playlist</a></li>
+                        <li class="playlist__list__item"><a href="#">Nome Playlist</a></li>
+                        
+                    </ul>
+
+                </div>
+            </div>
 
             <div class="sidebar__bottom">
                 <ul class="sidebar__bottom__list">
-                    <li class="sidebar__bottom__list__item sidebar__bottom__list__item--download"><a href="#"><img src="img/download.svg" alt="Download"></a></li>
-                    <li class="sidebar__bottom__list__item"><a href="#"><img class="sidebar__bottom__list__item--profile" src="img/profile.svg" alt="Profile"></a></li>
+                    <li class="sidebar__bottom__list__item sidebar__bottom__list__item--download"><a href="#"><img class="sidebar__bottom__list__item__img--download" src="img/download.svg" alt="Download"> <span class="sidebar__bottom__list__item__text--download hiddenOnMobile">Installa app</span></a></li>
+                    <li class="sidebar__bottom__list__item sidebar__bottom__list__item--profile"><span><img class="sidebar__bottom__list__item__img--profile" src="img/profile.svg" alt="Profile"> <span class="sidebar__bottom__list__item__text--profile hiddenOnMobile">John Doe</span></span></li>
                 </ul>
             </div>
 
@@ -45,14 +63,14 @@
             
             <div class="mainContentContainer">
 
-                <div class="navigation ">
-                    <a href="#" class="navigationLink highlighted">IN EVIDENZA</a>
-                    <a href="#" class="navigationLink">PODCAST</a>
-                    <a href="#" class="navigationLink">CLASSIFICHE</a>
-                    <a href="#" class="navigationLink">GENERI E MOOD</a>
-                    <a href="#" class="navigationLink">NUOVE USCITE</a>
-                    <a href="#" class="navigationLink">SCOPRI</a>
-                </div>
+                <ul class="navigation ">
+                    <li class="navigation__item navigation__highlighted"><a href="#" class="navigationLink">IN EVIDENZA</a></li>
+                    <li class="navigation__item"><a href="#" class="navigationLink">PODCAST</a></li>
+                    <li class="navigation__item"><a href="#" class="navigationLink">CLASSIFICHE</a></li>
+                    <li class="navigation__item"><a href="#" class="navigationLink">GENERI E MOOD</a></li>
+                    <li class="navigation__item"><a href="#" class="navigationLink">NUOVE USCITE</a></li>
+                    <li class="navigation__item"><a href="#" class="navigationLink">SCOPRI</a></li>
+                </ul>
 
                 <div class="sectionsContainer">
                     <section class="section">
@@ -194,8 +212,8 @@
                     <h6 class="playingNow__titles__song">Brano Nome</h6>
                 </div>
                 <div class="playingNow__icons">
-                    <span><i class="far fa-heart"></i></span>
-                    <span><i class="far fa-folder"></i></span>
+                    <a><i class="far fa-heart"></i></a>
+                    <a><i class="far fa-folder"></i></a>
                 </div>
             </div>
 

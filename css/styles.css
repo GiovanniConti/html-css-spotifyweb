@@ -9,6 +9,7 @@
     height: calc(100vh - 70px);
     background-color: #141922;
     display: flex;
+    overflow: auto;
 }
 
 .sidebar{
@@ -26,27 +27,27 @@
 }
 
 .sidebar__top__navList{
-    text-decoration: none;
-    padding: 2px;
+    padding: 5px 0;
+}
+
+.logoSmall{
+    filter: brightness(2);
 }
 
 .sidebar__middle{
     flex-grow: 1;
+    overflow: auto;
 }
 
 .sidebar__bottom{
     flex-shrink: 0;
 }
 
-.sidebar__bottom__list{
-    text-decoration: none;
-}
-
-.sidebar__bottom__list__item--download{
+.sidebar__bottom__list__item__img--download{
     padding: 5px;
 }
 
-.sidebar__bottom__list__item--profile{
+.sidebar__bottom__list__item__img--profile{
     width: 28px;
     height: 28px;
     background-color: #c1c1c1;
@@ -54,7 +55,6 @@
 }
 
 .mainContent{
-    width: 100%;
     flex-grow: 1;
 }
 
@@ -62,7 +62,7 @@
     background-color: #080B11;
     display: flex;
     justify-content: flex-end;
-    padding: 20px 3px;
+    padding: 25px 5px;
 }
 
 .mainContentBtn__btn{
@@ -76,7 +76,7 @@
 }
 
 .mainContentContainer{
-    height: calc(100% - 78px);
+    height: calc(100% - 88px);
     padding: 0 18px;
     overflow: auto;
 }
@@ -88,26 +88,30 @@
     padding-bottom: 10px;
 }
 
-.navigationLink{
-    text-decoration: none;
-    color: #878787;
-    font-size: 12px;
+.navigation__item{
     padding: 15px 6px;
+}
+
+.navigationLink{
+    font-size: 12px;
     font-weight: 600;
 }
 
-.highlighted{
+.navigation__highlighted{
     position: relative;
 }
 
-.highlighted::after{
+.navigation__highlighted::after{
     content: "";
-    width: 30px;
+    width: 40%;
     height: 3px;
     background: yellowgreen;
     position: absolute;
-    top: 32px;
-    left: 31px;
+    top: 70%;
+    left: 30%;
+}
+.sidebar__top__navListHighlighted__link{
+    filter: brightness(1);
 }
 
 .sectionTitle{
@@ -123,8 +127,7 @@
 .containerCards{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px 0;
+    padding: 25px 0;
 }
 
 .card{
@@ -234,11 +237,149 @@
 .extraControls__icon{
     color: white;
     padding: 4px;
+    filter: brightness(2);
+}
+
+
+@media screen and (max-width: 567px){
+
+    .logoLarge{
+        display: none;
+    }
+
+    .hiddenOnMobile{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 568px) {
+    .sidebar{
+        width: 250px;
+        padding: 0 17px;
+    }
+    
+    .logoSmall{
+        display: none;
+    }
+
+    .sidebar__top__navList__item{
+        padding: 5px 0;
+    }
+    
+    .sidebar__top__navListHighlighted{
+        position: relative;
+    }
+
+    .sidebar__top__navListHighlighted::after{
+        content: "";
+        width: 3px;
+        position: absolute;
+        left: -17px;
+        height: 75%;
+        background: yellowgreen;
+    }
+
+    .sidebar__top__navList__item__img{
+        width: 25px;
+        vertical-align: middle;
+    }
+
+    .sidebar__top__navList__item__text{
+        font-size: 13px;
+        font-weight: 600;
+        padding: 0 5px;
+    }
+
+    .logoLarge{
+        width: 150px;
+        padding: 13px 0;
+        filter: brightness(2);
+    }
+
+    .playlist{
+        color: white;
+        font-size: 14px;
+        padding: 8px 0;
+        flex-shrink: 0;
+    }
+
+    .playlist__add{
+        flex-shrink: 0;
+        font-size: 14px;
+        font-weight: 700;
+    }
+
+    .playlist__plusSign{
+        color: white;
+        font-size: 40px;
+        vertical-align: middle;
+        padding-right: 5px;
+    }
+
+    .playlist__list{
+        flex-grow: 1;
+        overflow: auto;
+    }
+
+    .playlist__list__item{
+        font-weight: 600;
+        font-size: 13px;
+        padding: 8px 0;
+    }
+
+
+    .navigation{
+        padding-bottom: 20px;
+    }
+
+    .navigationLink{
+        font-size: 15px;
+        padding: 17px 10px;
+    }
+
+    .sidebar__bottom__list__item--download{
+        border-bottom: 1px solid #878787;
+    }
+
+    .sidebar__bottom__list__item__img--download {
+        width: 25px;
+        vertical-align: top;
+        padding: 3px ​8px 8px 0;
+    }
+
+    .sidebar__bottom__list__item__text--download{
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .sidebar__bottom__list__item--profile{
+        padding: 10px 0;
+    }
+
+    .sidebar__bottom__list__item__text--profile{
+        color: white;
+        font-weight: 600;
+    }
 }
 
 
 
+
 /* Utilities */
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    filter: brightness(0.5);
+}
+
+a:hover{
+    filter: brightness(2);
+}
 
 .progressiveBarStyle{
     height: 4px;
