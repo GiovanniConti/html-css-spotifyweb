@@ -255,8 +255,8 @@
     padding: 3px 15px;
 }
 
-.playerControls__buttons__icons--play:hover{
-    font-size: 31px;
+.playerControls__buttons__icons--play i:hover{
+    transform: scale(1.2);
 }
 
 .playerControls__playbackBar{
@@ -353,15 +353,23 @@
 
     /* SIDEBAR MIDDLE */
 
+    .containerPlaylist{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
     .playlist{
         color: white;
         font-size: 14px;
         padding: 8px 0;
+        flex-shrink: 0;
     }
 
     .playlist__add{
         font-size: 14px;
         font-weight: 700;
+        flex-shrink: 0;
     }
 
     .playlist__plusSign{
@@ -369,6 +377,11 @@
         font-size: 40px;
         vertical-align: middle;
         padding-right: 5px;
+    }
+
+    .playlist__list{
+        flex-grow: 1;
+        overflow: auto;
     }
 
     .playlist__list__item{
